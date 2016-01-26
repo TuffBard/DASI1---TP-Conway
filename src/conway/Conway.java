@@ -5,6 +5,8 @@
  */
 package conway;
 
+
+
 /**
  *
  * @author Administrateur
@@ -16,19 +18,26 @@ public class Conway {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String number = "11";
-        String res = getNNext(40,number);
+        String number = "112";
+        int n = 45;
+        String res = getNNext(n,number);
         System.out.println(res);
     }
     
     public static String getNext(String term)
     {
-        char current;
+        int current;
         int count = 0;
         String result ="";
         
+        int[] nbterm = new int[term.length()];
+        for(int i = 0;i<term.length();i++)
+        {
+            nbterm[i] = Character.getNumericValue(term.charAt(i));
+        }
+        
         if(term.length() > 0){
-            current = term.charAt(0);
+            current = nbterm[0];
             count++;
         }
         else {
@@ -36,13 +45,13 @@ public class Conway {
         }
         for(int i = 1;i < term.length();i++)
         {
-            if(current == term.charAt(i))
+            if(current == nbterm[i])
                 count++;
             else{
                 result += String.valueOf(count);
                 result += current;
                 count = 1;
-                current = term.charAt(i);
+                current = nbterm[i];
             }
         }
         result += String.valueOf(count);

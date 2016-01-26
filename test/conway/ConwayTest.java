@@ -78,7 +78,7 @@ public class ConwayTest {
      */
     @Test
     public void testGetNNext() {
-        int n = 2;
+        int n = 40;
         String term = "1";
         String expResult = "21";
         String result = Conway.getNNext(n,term);
