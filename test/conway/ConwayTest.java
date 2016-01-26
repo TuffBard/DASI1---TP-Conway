@@ -73,5 +73,15 @@ public class ConwayTest {
         String result = Conway.getNext(term);
         assertEquals(expResult, result);
     }
-    
+    /**
+     * Test of getNNext method, of class Conway.
+     */
+    @Test
+    public void testGetNNext() {
+        int n = 2;
+        String term = "1";
+        String expResult = "21";
+        String result = Conway.getNNext(n,term);
+        assertEquals(expResult, result);
+    }
 }

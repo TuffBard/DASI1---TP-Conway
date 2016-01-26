@@ -17,9 +17,8 @@ public class Conway {
     public static void main(String[] args) {
         // TODO code application logic here
         String number = "11";
-        String res = getNext(number);
+        String res = getNNext(40,number);
         System.out.println(res);
-        
     }
     
     public static String getNext(String term)
@@ -51,4 +50,10 @@ public class Conway {
         return result;
     }
     
+    public static String getNNext(int n,String term)
+    {
+        for(int i=0;i<n;i++)
+            term = getNext(term);
+        return term;
+    }
 }
